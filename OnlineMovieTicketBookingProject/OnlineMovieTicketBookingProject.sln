@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineMovieTicketBookingProject", "OnlineMovieTicketBookingProject\OnlineMovieTicketBookingProject.csproj", "{CF7EBFAE-5044-4315-81F8-D350281BF206}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUploadControl", "FileUploadControl\FileUploadControl.csproj", "{EFFA4111-3BD4-41DD-A80B-9BD192B3AFE4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF7EBFAE-5044-4315-81F8-D350281BF206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF7EBFAE-5044-4315-81F8-D350281BF206}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF7EBFAE-5044-4315-81F8-D350281BF206}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF7EBFAE-5044-4315-81F8-D350281BF206}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFFA4111-3BD4-41DD-A80B-9BD192B3AFE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFFA4111-3BD4-41DD-A80B-9BD192B3AFE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFFA4111-3BD4-41DD-A80B-9BD192B3AFE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFFA4111-3BD4-41DD-A80B-9BD192B3AFE4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {23FA99E3-F172-409F-801F-A9FB78E53FD0}
+	EndGlobalSection
+EndGlobal
