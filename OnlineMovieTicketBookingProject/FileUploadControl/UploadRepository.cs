@@ -24,7 +24,8 @@ namespace FileUploadControl
             foreach(var item in files)
             {
                 string fileName = item.FileName.Trim('"');
-                byte[] buffer = new byte[16];
+                fileName = this.EnsureFileName(fileName);
+                byte[] buffer = new byte[16*1024];
                 using(FileStream output = System.IO.File.Create(this.GetpathAndFileName(fileName)))
                 {
                     using(Stream input = item.OpenReadStream())
@@ -41,9 +42,19 @@ namespace FileUploadControl
             }
         }
 
+        private string EnsureFileName(string fileName)
+        {
+            if (fileName.Contains("\\"))
+            {
+                fileName = fileName.Substring(fileName.LastIndexOf("\\") + 1);
+                
+            }
+            return fileName;
+        }
+
         private string GetpathAndFileName(string fileName)
         {
-            string path = this.hostingEnvironment.WebRootPath + "\\uploads";
+            string path = this.hostingEnvironment.WebRootPath + "\\uploads\\";
             if (Directory.Exists(path))
             
                 Directory.CreateDirectory(path);

@@ -17,6 +17,7 @@ namespace OnlineMovieTicketBookingProject.Data
         public DbSet<BookingTicket> BookingTicket { get; set; }
         public DbSet<Cart> Cart { get; set; }
         public DbSet<MovieDetails> MovieDetails { get; set; }
+        public DbSet<OnlineMovieTicketBookingProject.Models.ApplicationUser> ApplicationUser { get; set; }
 
 
     }

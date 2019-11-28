@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using FileUploadControl;
@@ -40,13 +41,16 @@ namespace OnlineMovieTicketBookingProject.Controllers
         [HttpPost]
         public IActionResult Create(IList<IFormFile> files, MovieDataViewModel model,MovieDetails movieDetails)
         {
+            string path = string.Empty;
+            
             movieDetails.Movie_Name = model.Name;
             movieDetails.Movie_Description = model.Description;
             movieDetails.DateAndTime = model.DateOfMovie;
 
             foreach(var item in files)
             {
-                movieDetails.MoviePicture = "~/uploads/" + item.FileName.Trim();
+                path = Path.GetFileName(item.FileName.Trim());
+                movieDetails.MoviePicture = "~/uploads/" + path;
             }
             _upload.uploadMultipleFiles(files);
             _context.MovieDetails.Add(movieDetails);
@@ -55,11 +59,23 @@ namespace OnlineMovieTicketBookingProject.Controllers
             TempData["Sucess"] = "Save Your Movie";
 
             return RedirectToAction("Create","Admin");
-
-
-            
-            
+  
         }
+
+        [HttpGet]
+        public IActionResult CheckBooking()
+        {
+            var getBooking = _context.BookingTicket.ToList().OrderByDescending(a => a.DateToPresent);
+            return View(getBooking);
+        }
+
+        [HttpGet]
+        public IActionResult GetUserDetails()
+        {
+            var getAllUsers = _context.Users.ToList();
+            return View(getAllUsers);
+        }
+
 
     }
 }
